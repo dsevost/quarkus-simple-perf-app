@@ -74,11 +74,11 @@ public class PeopleResource {
 
     @GET
     @Produces("application/json")
-    public List<Person> findAll(@QueryParam("sort") @DefaultValue("name") String sortQuery) {
+    public Response findAll(@QueryParam("sort") @DefaultValue("name") String sortQuery) {
         LOGGER.debugf("Looking for all people, sort by: %s", sortQuery);
         List<Person> people = repo.listAll(Sort.by(sortQuery));
         LOGGER.debugf("Foud %s people", people.size());
-        return people;
+        return Response.ok(people).build();
     }
 
     @Transactional

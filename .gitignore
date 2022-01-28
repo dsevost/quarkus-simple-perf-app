@@ -1,0 +1,6 @@
+**/*.cmd
+**/.mvn/
+**/mvnw*
+**/target/
+**/README-*.md
+**/*example*md

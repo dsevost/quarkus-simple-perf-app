@@ -17,9 +17,9 @@ esac
 [ -d $BASE_FIR ] || mkdir -p $BASE_DIR
 
 [ "$DB_NAME" = "" ] || \
-    java -cp /home/jboss/h2.jar org.h2.tools.Shell -url jdbc:h2:file:$BASE_DIR/$DB_NAME -sql exit
+    java -cp /home/jboss/h2.jar org.h2.tools.Shell -url jdbc:h2:file:$BASE_DIR/$DB_NAME -sql ""
 
-[ "$DB_USER" != "" && "$DB_PASSWORD" != "" ] && \
+[ "$DB_USER" != "" -a "$DB_PASSWORD" != "" ] && \
     java -cp /home/jboss/h2.jar org.h2.tools.Shell -url jdbc:h2:file:$BASE_DIR/$DB_NAME -sql "CREATE USER IF NOT EXISTS $DB_USER PASSWORD '$DB_PASSWORD' ADMIN;"
 
 #case $EXECUTE_SCRIPT_ON_START in

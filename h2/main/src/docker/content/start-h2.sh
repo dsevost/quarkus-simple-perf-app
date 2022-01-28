@@ -28,4 +28,4 @@ esac
 #        ;;
 #esac
 
-exec java -cp /home/jboss/h2.jar org.h2.tools.Shell -baseDir $BASE_DIR $SERVER_ARGS
+exec java -cp /home/jboss/h2.jar org.h2.tools.Server -baseDir $BASE_DIR $SERVER_ARGS

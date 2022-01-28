@@ -77,7 +77,7 @@ public class PeopleResource {
     public Response findAll(@QueryParam("sort") @DefaultValue("name") String sortQuery) {
         LOGGER.debugf("Looking for all people, sort by: %s", sortQuery);
         List<Person> people = repo.listAll(Sort.by(sortQuery));
-        LOGGER.debugf("Foud %s people", people.size());
+        LOGGER.debugf("Found %s people", people.size());
         return Response.ok(people).build();
     }
 
